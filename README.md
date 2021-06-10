@@ -1,7 +1,7 @@
 # Product Service
 The product service interact with the product schema in the coffeeshop database.
 
-#### :warning: Warning
+### :warning: Warning
 The main branch contain only this README file. This repository is use as a placeholder for live coding sessions with [Quarkus](https://quarkus.io/). Find the step below to create the services
 
 #### Prerequisites
