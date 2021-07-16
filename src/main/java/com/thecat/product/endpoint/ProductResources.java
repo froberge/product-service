@@ -20,12 +20,6 @@ public class ProductResources {
     @Inject
     ProductService productService;
 
-    @ConfigProperty(name = "application") 
-    String apps;
-
-    @ConfigProperty(name = "quarkus.datasource.jdbc.url")
-    String url;
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Product> listProduct() {
@@ -57,9 +51,6 @@ public class ProductResources {
     @Path( "health")
     @Produces(MediaType.TEXT_PLAIN)
     public String health() {
-        System.out.println( "applicaiton " + apps);
-        System.out.println( "url " + url);
-
         return "SUCCESS";
     }
 }
