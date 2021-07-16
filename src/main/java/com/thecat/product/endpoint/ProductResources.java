@@ -9,6 +9,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import com.thecat.product.service.ProductService;
 import com.thecat.product.model.Product;
 
@@ -17,6 +19,12 @@ public class ProductResources {
 
     @Inject
     ProductService productService;
+
+    @ConfigProperty(name = "application") 
+    String apps;
+
+    @ConfigProperty(name = "quarkus.datasource.jdbc.url")
+    String url;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -49,6 +57,9 @@ public class ProductResources {
     @Path( "health")
     @Produces(MediaType.TEXT_PLAIN)
     public String health() {
+        System.out.println( "applicaiton " + apps);
+        System.out.println( "url " + url);
+
         return "SUCCESS";
     }
 }
