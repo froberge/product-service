@@ -12,10 +12,10 @@ public class ProductResourcesTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/product")
+          .when().get("product/health")
           .then()
              .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .body(is("SUCCESS"));
     }
 
 }
